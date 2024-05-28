@@ -13,6 +13,7 @@ export class HomepageComponent {
   related: PostInterface[] = [];
   posts: PostInterface[] = [];
   tags: string[] = [];
+  postTags: PostInterface[] = [];
 
   @ViewChild("singlePost") singlePost!: SinglePostComponent
 
@@ -24,6 +25,11 @@ export class HomepageComponent {
     this.post = this.postService.topPost
     this.tags = this.postService.getTags()
   }
+
+  filterByTag(tag: string): void {
+    this.posts = this.postService.getPostsForTag(tag);
+  }
+
   editPost() {
     alert("Edit successful!")
   }

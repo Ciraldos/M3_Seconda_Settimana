@@ -284,4 +284,8 @@ getTags():string[] {
   });
   return tags;
 }
+
+getPostsForTag(tag: string): PostInterface[] {
+  return this.posts.filter((post) => post.tags.includes(tag));
+}
 }

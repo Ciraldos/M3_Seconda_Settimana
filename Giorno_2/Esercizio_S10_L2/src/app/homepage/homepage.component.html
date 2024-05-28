@@ -70,7 +70,13 @@
   <div class="container">
     <p class="fw-bolder">Filter by:</p>
     <div class="d-flex justify-content-around flex-wrap">
-      <p class="btn btn-secondary" *ngFor="let tag of tags">{{ tag }}</p>
+      <button
+        class="btn btn-secondary"
+        *ngFor="let tag of tags"
+        (click)="filterByTag(tag)"
+      >
+        {{ tag }}
+      </button>
     </div>
   </div>
 </div>
