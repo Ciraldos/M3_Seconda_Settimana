@@ -11,12 +11,12 @@ export class ColoraTagDirective {
     this.setRandomBackgroundColor();
   }
 
-  private setRandomBackgroundColor() {
+   setRandomBackgroundColor() {
     const randomColor = this.getRandomColor();
     this.ref.nativeElement.style.backgroundColor = randomColor;
   }
 
-  private getRandomColor(): string {
+   getRandomColor(): string {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
