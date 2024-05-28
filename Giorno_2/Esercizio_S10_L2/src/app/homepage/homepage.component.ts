@@ -12,6 +12,7 @@ export class HomepageComponent {
   post!: PostInterface
   related: PostInterface[] = [];
   posts: PostInterface[] = [];
+  tags: string[] = [];
 
   @ViewChild("singlePost") singlePost!: SinglePostComponent
 
@@ -21,6 +22,7 @@ export class HomepageComponent {
     this.posts = this.postService.posts;
     this.related = this.postService.getRandomPosts(4)
     this.post = this.postService.topPost
+    this.tags = this.postService.getTags()
   }
   editPost() {
     alert("Edit successful!")

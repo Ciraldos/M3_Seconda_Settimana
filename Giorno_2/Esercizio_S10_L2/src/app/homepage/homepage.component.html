@@ -67,6 +67,12 @@
       </ul>
     </div>
   </div>
+  <div class="container">
+    <p class="fw-bolder">Filter by:</p>
+    <div class="d-flex justify-content-around flex-wrap">
+      <p class="btn btn-secondary" *ngFor="let tag of tags">{{ tag }}</p>
+    </div>
+  </div>
 </div>
 
 <section class="row">

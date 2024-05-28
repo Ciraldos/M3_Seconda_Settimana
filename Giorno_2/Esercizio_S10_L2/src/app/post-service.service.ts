@@ -273,5 +273,15 @@ getRandomPosts(num: number): PostInterface[] {
     randomPosts.push(this.posts[random]);
   }
   return randomPosts;
+  }
+
+getTags():string[] {
+  const tags: string[] = [];
+  this.posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      if (!tags.includes(tag)) tags.push(tag);
+    });
+  });
+  return tags;
 }
 }
