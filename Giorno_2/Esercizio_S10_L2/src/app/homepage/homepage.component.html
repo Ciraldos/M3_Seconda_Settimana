@@ -47,7 +47,8 @@
           <a routerLink="/post/{{ post.id }}">🔗 {{ post.title }}</a>
           <br />
           <span
-            class="badge bg-primary me-1 text-uppercase"
+            appColoraTag
+            class="badge me-1 text-uppercase"
             *ngFor="let tag of post.tags || []"
             >{{ tag }}</span
           >
