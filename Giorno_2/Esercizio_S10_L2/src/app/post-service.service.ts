@@ -250,6 +250,28 @@ export class PostServiceService {
   ];
 
   constructor() {
-  }
+}
+get activePosts(): PostInterface[] {
+  return this.posts.filter((post) => post.active);
+}
 
+get inactivePosts(): PostInterface[] {
+  return this.posts.filter((post) => !post.active);
+}
+
+get topPost(): PostInterface {
+  return this.posts.sort((a, b) => b.reactions - a.reactions)[0];
+}
+
+getRandomPosts(num: number): PostInterface[] {
+  const randomPosts: PostInterface[] = [];
+  const numHistory: number[] = [];
+  for (let i = 0; i < num; i++) {
+    const random = Math.floor(Math.random() * this.posts.length);
+    if (numHistory.includes(random)) continue;
+    numHistory.push(random);
+    randomPosts.push(this.posts[random]);
+  }
+  return randomPosts;
+}
 }
