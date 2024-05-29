@@ -1,0 +1,21 @@
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Categoria</th>
+    <th>Price</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{ p.id }}</td>
+    <td>{{ p.title }}</td>
+    <td>{{ p.description }}</td>
+    <td>{{ p.category }}</td>
+    <td>{{ p.price }}</td>
+    <button [routerLink]="['/preferiti', p.id]" class="btn btn-warning">
+      Aggiungi ai preferiti
+    </button>
+    <button class="btn btn-primary">Aggiungi al carrello</button>
+  </tr>
+</table>
