@@ -1,1 +1,12 @@
-<p>home works!</p>
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let p of photoArr">
+    <td>{{ p.id }}</td>
+    <td>{{ p.title }}</td>
+    <button class="btn btn-success">Mi piace</button>
+  </tr>
+</table>
