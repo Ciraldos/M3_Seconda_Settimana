@@ -1,0 +1,38 @@
+<div class="container-fluid" id="first">
+  <div class="row justify-content-center">
+    <div class="col-4 my-5 bg-white rounded-3 shadow-lg" id="boh">
+      <h1 class="my-3">ToDo List</h1>
+
+      <div class="row">
+        <div class="col-12 px-4">
+          <p class="text-start">Filter a task by name</p>
+          <input type="text" class="form-control" placeholder="Search..." />
+          <div class="row my-3 px-2">
+            <div
+              class="col-12 d-flex my-2 px-5 border border-2 rounded-3 border-gray shadow-sm"
+              *ngFor="let t of todosWithUser"
+              [ngClass]="{
+                completed: t.completed,
+                notcompleted: !t.completed
+              }"
+            >
+              <input
+                type="checkbox"
+                class="me-4"
+                [(ngModel)]="t.completed"
+                id="input"
+              />
+              <div class="text-start pt-2">
+                <p>{{ t.todo }}</p>
+                <p>
+                  Assigned to:
+                  <span class="fw-bolder">{{ t.user?.firstName }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
